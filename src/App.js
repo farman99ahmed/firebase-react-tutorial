@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Login from './components/Login';
 import NavigationBar from './components/Navbar';
 import Register from './components/Register';
@@ -21,6 +21,7 @@ function App() {
             <PrivateRoute path="/createblog" component={CreateBlog} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
+            <Redirect from="*" to="/" />
           </Switch>
         </Router>
       </AuthContext.Provider>

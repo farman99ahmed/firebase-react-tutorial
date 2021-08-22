@@ -25,6 +25,7 @@ const Blogs = (props) => {
         } else {
             setBlogs(response)
             setLoading(false);
+            if (response.length === 0) alert('No blogs created by you');
         }
     }
 
